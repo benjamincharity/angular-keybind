@@ -1,4 +1,4 @@
-# project-name
+# angular-keybind
 
 
 
@@ -10,7 +10,6 @@ _[Comments and Pull Requests welcome!][issues]_
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Usage](#usage)
-- [Foo](#foo)
 - [Development](#development)
 
 
@@ -19,12 +18,12 @@ _[Comments and Pull Requests welcome!][issues]_
 
 #### NPM
 ```bash
-npm install MY_LIBRARY --save
+npm install angular-keybind --save
 ```
 
 #### Bower
 ```bash
-bower install MY_LIBRARY --save
+bower install angular-keybind --save
 ```
 
 ## Dependencies
@@ -40,14 +39,11 @@ bower install MY_LIBRARY --save
 ## Development
 
 - `npm run build` - Build JS/CSS/HTML/SVG
-- `npm run build:js` - Build JS
-- `npm run build:css` - Build CSS
-- `npm run watch:css` - Watch CSS and rebuild on change
-- `npm run watch:js` - Watch JS/HTML and rebuild on change
 - `npm run watch` - Watch JS/CSS/HTML and rebuild on change
+- `npm run tests` - Run tests
 
 
 
 
-[issues]: https://github.com/benjamincharity/MY_LIBRARY/issues
+[issues]: https://github.com/benjamincharity/angular-keybind/issues
 
