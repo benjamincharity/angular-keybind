@@ -1,2 +1,6 @@
-angular.module('bc.LIBRARY', []);
+import { KeybindDirective } from './keybind.directive';
+
+angular.module('bc.AngularKeybind', [])
+    .directive('bcKeybind', KeybindDirective)
+;
 
