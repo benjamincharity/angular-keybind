@@ -1,6 +1,6 @@
 {
   "name": "angular-keybind",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A small AngularJS module to bind specific keypress events to methods.",
   "keywords": [
     "angular",
