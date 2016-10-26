@@ -26,7 +26,7 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      'app/node_modules/**/!(angular|moment|angular-mocks).js'
+      'app/node_modules/**/!(angular|angular-mocks).js'
     ],
 
 
@@ -77,7 +77,8 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    //browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
