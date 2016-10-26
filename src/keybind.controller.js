@@ -1,10 +1,6 @@
 export class KeybindController {
 
-    constructor() {
-        console.log('test');
-    }
-
-
+    constructor() {}
 
 
     /**
@@ -53,7 +49,6 @@ export class KeybindController {
 
         return correctKeypress >= 0 ? true : false;
     }
-
 
 }
 
