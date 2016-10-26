@@ -1,18 +1,18 @@
 {
-  "name": "MY_LIBRARY",
-  "description": "MY_LIBRARY_DESCRIPTION",
-  "homepage": "https://github.com/benjamincharity/MY_LIBRARY",
+  "name": "angular-keybind",
+  "description": "A small AngularJS module to bind specific keypress events to methods.",
+  "homepage": "https://github.com/benjamincharity/angular-keybind",
   "authors": [
     "Benjamin Charity <ben@benjamincharity.com>"
   ],
   "license": "MIT",
-  "main": "dist/MY_LIBRARY.js",
+  "main": "dist/angular-keybind.js",
   "keywords": [
     "angular",
     "KEYWORDS"
   ],
   "dependencies": {
-    "angular": "~1.4.0"
+    "angular": "^1.4.0"
   },
   "ignore": [
     "**/.*",
