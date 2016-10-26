@@ -115,7 +115,7 @@ and third set of attributes can be used.
   bc-keybind
   bc-keys="['13']"
   bc-method="vm.myMethodForEnter"
-  bc-keys="['37', '38', '39', '40']"
+  bc-keys2="['37', '38', '39', '40']"
   bc-method2="vm.myMethodForArrows"
 >
 ```
