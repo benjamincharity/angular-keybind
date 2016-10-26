@@ -124,6 +124,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var KeybindController = exports.KeybindController = function () {
 	    function KeybindController() {
 	        _classCallCheck(this, KeybindController);
+	
+	        console.log('test');
 	    }
 	
 	    /**

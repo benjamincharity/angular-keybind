@@ -1,6 +1,7 @@
 export class KeybindController {
 
     constructor() {
+        console.log('test');
     }
 
 
