@@ -4,7 +4,10 @@
   "description": "A small AngularJS module to bind specific keypress events to methods.",
   "keywords": [
     "angular",
-    "KEYWORDS"
+    "keypress",
+    "keybind",
+    "keycode",
+    "keyboard"
   ],
   "author": "Benjamin Charity <ben@benjamincharity.com>",
   "license": "MIT",

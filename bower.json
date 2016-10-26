@@ -9,7 +9,10 @@
   "main": "dist/angular-keybind.js",
   "keywords": [
     "angular",
-    "KEYWORDS"
+    "keypress",
+    "keybind",
+    "keycode",
+    "keyboard"
   ],
   "dependencies": {
     "angular": "^1.4.0"
