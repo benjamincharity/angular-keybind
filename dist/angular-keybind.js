@@ -81,10 +81,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        replace: true,
 	        scope: {},
 	        bindToController: {
+	            bcKeys1: '=',
 	            bcMethod1: '&',
-	            bcKeys1: '@',
-	            bcMethod2: '&',
-	            bcKeys2: '@'
+	            bcKeys2: '=?',
+	            bcMethod2: '&?',
+	            bcKeys3: '=?',
+	            bcMethod3: '&?'
 	        },
 	        link: linkFunction,
 	        controller: _keybind.KeybindController,
@@ -96,21 +98,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * Link
 	     */
-	    function linkFunction($scope, $element, $attrs, vm) {
-	        $element.bind('keydown keypress', function (event) {
-	            var key = typeof event.which === 'undefined' ? event.keyCode : event.which;
-	            console.log('key: ', key);
-	            //const correctKeypress = bcKeys1.filter((item) => {
+	    function linkFunction($scope, $element, $attrs, $ctrl) {
 	
-	            //});
-	            /*
-	             *if (event.which === 13) {
-	             *    $scope.$apply(() => {
-	             *        $scope.$eval($attrs.myEnter);
-	             *    });
-	             *    event.preventDefault();
-	             *}
-	             */
+	        // Trigger the ctrl logic on every keydown event
+	        $element.bind('keydown', function (event) {
+	            $ctrl.checkAndFire(event);
 	        });
 	    }
 	}
@@ -131,16 +123,60 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var KeybindController = exports.KeybindController = function () {
 	    function KeybindController() {
-	        'ngInject';
-	
 	        _classCallCheck(this, KeybindController);
-	
-	        this._activate();
 	    }
 	
+	    /**
+	     * If the key matches a key code, fire the appropriate event
+	     *
+	     * @param {Object} event
+	     */
+	
+	
 	    _createClass(KeybindController, [{
-	        key: '_activate',
-	        value: function _activate() {}
+	        key: 'checkAndFire',
+	        value: function checkAndFire(event) {
+	            var DELAY = 500;
+	
+	            var key = (typeof event.which === 'undefined' ? event.keyCode : event.which).toString();
+	
+	            if (this.bcKeys1 && this.bcKeys1.length > 0) {
+	                if (this._triggerMatchesInput(key, this.bcKeys1)) {
+	                    this.bcMethod1()(event);
+	                }
+	            }
+	
+	            if (this.bcKeys2 && this.bcKeys2.length > 0) {
+	                if (this._triggerMatchesInput(key, this.bcKeys2)) {
+	                    this.bcMethod2()(event);
+	                }
+	            }
+	
+	            if (this.bcKeys3 && this.bcKeys3.length > 0) {
+	                if (this._triggerMatchesInput(key, this.bcKeys3)) {
+	                    this.bcMethod3()(event);
+	                }
+	            }
+	        }
+	
+	        /**
+	         * Determine if a key is found in an array of keys
+	         *
+	         * @param {String} key
+	         * @param {Array} keys
+	         * @return {Bool} found
+	         */
+	
+	    }, {
+	        key: '_triggerMatchesInput',
+	        value: function _triggerMatchesInput(key, keys) {
+	            // Check to see if the key matches one in our array
+	            var correctKeypress = keys.find(function (item) {
+	                return key === item;
+	            });
+	
+	            return correctKeypress ? true : false;
+	        }
 	    }]);
 	
 	    return KeybindController;
