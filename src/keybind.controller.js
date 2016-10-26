@@ -46,11 +46,11 @@ export class KeybindController {
      */
     _triggerMatchesInput(key, keys) {
         // Check to see if the key matches one in our array
-        const correctKeypress = keys.find((item) => {
+        const correctKeypress = keys.findIndex((item) => {
             return key === item;
         });
 
-        return correctKeypress ? true : false;
+        return correctKeypress >= 0 ? true : false;
     }
 
 
