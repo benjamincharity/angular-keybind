@@ -19,6 +19,7 @@ _[Comments and Pull Requests welcome!][issues]_
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Usage](#usage)
+  - [Attributes](#attributes)
 - [Development](#development)
 
 
