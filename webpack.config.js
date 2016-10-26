@@ -13,44 +13,40 @@ var config = {
     devtool: 'source-map',
     output: {
         path: __dirname + '/dist',
-        filename: "[name].js",
+        filename: '[name].js',
         library: libraryName,
         libraryTarget: 'umd',
-        umdNamedDefine: true
+        umdNamedDefine: true,
     },
     module: {
         preLoaders: [
             {
                 test: /\.js$/,
                 loader: 'eslint-loader',
-                exclude: /node_modules/
-            }
+                exclude: /node_modules/,
+            },
         ],
         loaders: [
             {
                 test: /\.js$/,
                 loaders: [
                     'ng-annotate',
-                    'babel?presets[]=es2015'
+                    'babel?presets[]=es2015',
                 ],
-                exclude: /bower_components/
+                exclude: /node_modules/,
             },
-            {
-                test: /\.html$/,
-                loader: 'ngtemplate!html'
-            }
-        ]
+        ],
     },
     resolve: {
         root: path.resolve('./src'),
-        extensions: ['', '.js']
+        extensions: ['', '.js'],
     },
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             include: /\.min\.js$/,
-            minimize: true
-        })
-    ]
+            minimize: true,
+        }),
+    ],
 };
 
 module.exports = config;
