@@ -9,10 +9,12 @@ export function KeybindDirective(
         replace: true,
         scope: {},
         bindToController: {
+            bcKeys1: '=',
             bcMethod1: '&',
-            bcKeys1: '@',
-            bcMethod2: '&',
-            bcKeys2: '@',
+            bcKeys2: '=?',
+            bcMethod2: '&?',
+            bcKeys3: '=?',
+            bcMethod3: '&?',
         },
         link: linkFunction,
         controller: KeybindController,
@@ -25,24 +27,15 @@ export function KeybindDirective(
     /**
      * Link
      */
-    function linkFunction($scope, $element, $attrs, vm) {
-        $element.bind('keydown keypress', (event) => {
-            const key = typeof event.which === 'undefined' ? event.keyCode : event.which;
-            console.log('key: ', key);
-            //const correctKeypress = bcKeys1.filter((item) => {
+    function linkFunction($scope, $element, $attrs, $ctrl) {
 
-            //});
-            /*
-             *if (event.which === 13) {
-             *    $scope.$apply(() => {
-             *        $scope.$eval($attrs.myEnter);
-             *    });
-             *    event.preventDefault();
-             *}
-             */
+        // Trigger the ctrl logic on every keydown event
+        $element.bind('keydown', (event) => {
+            $ctrl.checkAndFire(event);
         });
+
     }
 
-}
 
+}
 
