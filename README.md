@@ -44,7 +44,38 @@ Add the script to your HTML:
 
 
 ## Usage
+Include `bc.AngularKeybind` as a dependency in your project:
 
+```javascript
+angular.module('YourModule', ['bc.AngularKeybind']);
+```
+
+Use this directive as an attribute on any element that can be focused. It will listen for keypress
+events on the element and fire the associated method.
+
+```javascript
+export class YourController {
+
+    constructor() {}
+
+    // I will be called if either enter or space is triggered while the element has focus
+    myMethod(event) {
+        console.log('One of our keys was pressed!');
+        console.log('Original event object: ', event);
+    }
+
+}
+```
+
+```html
+<!--
+  13 is the key code for 'enter'
+  32 is the key code for 'space'
+-->
+<input bc-keybind bc-keys="['13, '32']" bc-method="vm.myMethod">
+```
+
+> Notice! When passing in the method reference, parenthesis `()` should not be added.
 
 
 
