@@ -38,8 +38,8 @@ bower install angular-keybind --save
 
 ## Development
 
-- `npm run build` - Build JS/CSS/HTML/SVG
-- `npm run watch` - Watch JS/CSS/HTML and rebuild on change
+- `npm run build` - Build JS
+- `npm run watch` - Watch JS and rebuild on change
 - `npm run test` - Run tests
 - `npm run watch:tests` - Watch for changes in `.spec.js` files and re-run the tests
 
