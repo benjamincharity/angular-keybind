@@ -171,11 +171,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        key: '_triggerMatchesInput',
 	        value: function _triggerMatchesInput(key, keys) {
 	            // Check to see if the key matches one in our array
-	            var correctKeypress = keys.find(function (item) {
-	                return key === item;
-	            });
+	            var correctKeypress = keys.findIndex(matchingKeypress);
 	
-	            return correctKeypress ? true : false;
+	            function matchingKeypress(item) {
+	                return key === item;
+	            }
+	
+	            return correctKeypress >= 0 ? true : false;
 	        }
 	    }]);
 	
