@@ -1,8 +1,13 @@
 # angular-keybind
 
+[![MIT License][license_image]][license_url] [![Coverage Status][coveralls_badge]][coveralls_link] [![NPM version][npm_version_image]][npm_url] [![CircleCI][circle_badge]][circle_link]
+
 :abc: :nut_and_bolt: A small AngularJS module to bind specific keypress events to methods.
 
-[![MIT License][license_image]][license_url] [![Coverage Status][coveralls_badge]][coveralls_link] [![NPM version][npm_version_image]][npm_url] [![CircleCI][circle_badge]][circle_link]
+At times you may need to attach certain functionality to an element based on specific key input. For
+simple cases, AngularJS's [`ngKeyup`][ng_keyup] is a built in solution that works well. At other
+times you may need something with a bit more power. angular-keybind was built to fit this more
+complex use case.
 
 > [:tv: **Demo**][demo]
 
@@ -93,6 +98,7 @@ export class YourController {
 [demo]: http://codepen.io/benjamincharity/pen/ALzOwo?editors=1000
 [demo_collection]: http://codepen.io/collection/XEyqxM/
 
+[ng_keyup]: https://docs.angularjs.org/api/ng/directive/ngKeyup
 [keycodes]: https://css-tricks.com/snippets/javascript/javascript-keycodes/
 
 [coveralls_badge]: https://coveralls.io/repos/github/benjamincharity/angular-keybind/badge.svg?branch=master
