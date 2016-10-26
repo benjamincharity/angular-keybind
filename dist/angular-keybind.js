@@ -81,8 +81,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        replace: true,
 	        scope: {},
 	        bindToController: {
-	            bcKeys1: '=',
-	            bcMethod1: '&',
+	            bcKeys: '=',
+	            bcMethod: '&',
 	            bcKeys2: '=?',
 	            bcMethod2: '&?',
 	            bcKeys3: '=?',
@@ -140,9 +140,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	            var key = (typeof event.which === 'undefined' ? event.keyCode : event.which).toString();
 	
-	            if (this.bcKeys1 && this.bcKeys1.length > 0) {
-	                if (this._triggerMatchesInput(key, this.bcKeys1)) {
-	                    this.bcMethod1()(event);
+	            if (this.bcKeys && this.bcKeys.length > 0) {
+	                if (this._triggerMatchesInput(key, this.bcKeys)) {
+	                    this.bcMethod()(event);
 	                }
 	            }
 	
@@ -171,11 +171,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        key: '_triggerMatchesInput',
 	        value: function _triggerMatchesInput(key, keys) {
 	            // Check to see if the key matches one in our array
-	            var correctKeypress = keys.findIndex(matchingKeypress);
-	
-	            function matchingKeypress(item) {
+	            var correctKeypress = keys.findIndex(function (item) {
 	                return key === item;
-	            }
+	            });
 	
 	            return correctKeypress >= 0 ? true : false;
 	        }
