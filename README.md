@@ -1,6 +1,6 @@
 # angular-keybind
 
-
+:abc: :nut_and_bolt: A small AngularJS module to bind specific keypress events to methods.
 
 _[Comments and Pull Requests welcome!][issues]_
 
@@ -47,4 +47,6 @@ bower install angular-keybind --save
 
 
 [issues]: https://github.com/benjamincharity/angular-keybind/issues
+
+[keycodes]: https://css-tricks.com/snippets/javascript/javascript-keycodes/
 
