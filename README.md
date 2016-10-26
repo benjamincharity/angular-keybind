@@ -4,10 +4,10 @@
 
 :abc: :nut_and_bolt: A small AngularJS module to bind specific keypress events to methods.
 
-At times you may need to attach certain functionality to an element based on specific key input. For
-simple cases, AngularJS's [`ngKeyup`][ng_keyup] is a built in solution that works well. At other
-times you may need something with a bit more power. angular-keybind was built to fit this more
-complex use case.
+At times you may need to attach specific functionality to an element based on specific key input.
+For simple cases, AngularJS has a built in solution called [`ngKeyup`][ng_keyup] that works well. At
+other times you may need something with a bit more power. angular-keybind was built to solve this
+more complex use case.
 
 > [:tv: **Demo**][demo]
 
@@ -117,10 +117,6 @@ and third set of attributes can be used.
   bc-keys="['37', '38', '39', '40']"
   bc-method2="vm.myMethodForArrows"
 >
-<!--
-  Notice! When passing in the method reference,
-  parenthesis `()` should not be added.
--->
 ```
 
 ```javascript
