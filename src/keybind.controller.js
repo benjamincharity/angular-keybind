@@ -17,9 +17,9 @@ export class KeybindController {
         const key = (typeof event.which === 'undefined' ?
             event.keyCode : event.which).toString();
 
-        if (this.bcKeys1 && this.bcKeys1.length > 0) {
-            if (this._triggerMatchesInput(key, this.bcKeys1)) {
-                this.bcMethod1()(event);
+        if (this.bcKeys && this.bcKeys.length > 0) {
+            if (this._triggerMatchesInput(key, this.bcKeys)) {
+                this.bcMethod()(event);
             }
         }
 

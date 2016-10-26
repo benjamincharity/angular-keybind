@@ -9,8 +9,8 @@ export function KeybindDirective(
         replace: true,
         scope: {},
         bindToController: {
-            bcKeys1: '=',
-            bcMethod1: '&',
+            bcKeys: '=',
+            bcMethod: '&',
             bcKeys2: '=?',
             bcMethod2: '&?',
             bcKeys3: '=?',

@@ -25,14 +25,14 @@ describe('KeybindController', () => {
 
         beforeEach(() => {
             $scope = $rootScope.$new();
-            $scope.myMethod1 = (event) => {};
+            $scope.myMethod = (event) => {};
             $scope.myMethod2 = (event) => {};
             $scope.myMethod3 = (event) => {};
             element = angular.element(`
                 <input type="text"
                     bc-keybind
-                    bc-keys1="['13', '16']"
-                    bc-method1="myMethod1"
+                    bc-keys="['13', '16']"
+                    bc-method="myMethod"
                     bc-keys2="['32']"
                     bc-method2="myMethod2"
                     bc-keys3="['191', '190']"
@@ -43,12 +43,12 @@ describe('KeybindController', () => {
             $scope.$apply();
             $ctrl = element.isolateScope().$ctrl;
 
-            spyOn($scope, 'myMethod1');
+            spyOn($scope, 'myMethod');
             spyOn($scope, 'myMethod2');
             spyOn($scope, 'myMethod3');
         });
 
-        describe('for method1', () => {
+        describe('for method', () => {
 
             it('should trigger the method on correct keypress', () => {
                 element.triggerHandler({
@@ -56,9 +56,9 @@ describe('KeybindController', () => {
                     which: KEY_ENTER,
                 });
 
-                expect($scope.myMethod1).toHaveBeenCalled();
+                expect($scope.myMethod).toHaveBeenCalled();
 
-                const event = $scope.myMethod1.calls.allArgs()[0][0];
+                const event = $scope.myMethod.calls.allArgs()[0][0];
                 const actual = event.which.toString();
                 const expected = KEY_ENTER;
                 expect(actual).toEqual(expected);
@@ -70,7 +70,7 @@ describe('KeybindController', () => {
                     which: KEY_SLASH,
                 });
 
-                const actual = $scope.myMethod1.calls.any();
+                const actual = $scope.myMethod.calls.any();
                 expect(actual).toBe(false);
             });
 
